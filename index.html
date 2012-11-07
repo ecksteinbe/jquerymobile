@@ -1,71 +1,95 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
-	<title>My Page</title> 
+	<title>JQueryMobile</title> 
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<link rel="stylesheet" href="css/jquery.mobile-1.2.0.css" />
 
 </head> 
 <body> 
 
-<div data-role="page">
+	<div id="mobileBanking" data-role="page">
 
-	<div data-role="header">
-		<h1>My Title</h1>
-	</div><!-- /header -->
+		<div data-role="header">
+			<div data-role="navbar">
+		   		<ul>
+			        <li><a href="#transaktionsliste">Transaktionsliste</a></li>
+			        <li><a href="#">Filialfinder</a></li>
+			        <li><a href="#">Ueberweisungen</a></li>
+			        <li><a href="#">Konteneinstellungen</a></li>
+		   		 </ul>
+			</div><!-- /navbar -->
+		</div><!-- /header -->
 
-	<div data-role="content">	
-		<div data-role="navbar">
-    <ul>
-        <li><a href="#">One</a></li>
-        <li><a href="#">Two</a></li>
-        <li><a href="#">Three</a></li>
-    </ul>
-</div><!-- /navbar -->
-		<p>Hello world</p>	
+	</div>
 
-		<ul data-role="listview" data-inset="true" data-filter="true" data-theme="b">
-			<li><a href="#">Acura</a></li>
-			<li><a href="#">Audi</a></li>
-			<li><a href="#">BMW</a></li>
-			<li><a href="#">Cadillac</a></li>
-			<li><a href="#">Ferrari</a></li>
-		</ul>
-		
-		 <a href="#page2" data-role="button" data-icon="star" data-theme="a">Button</a> 
-		 	
-	</div><!-- /content -->
+	<div id="transaktionsliste" data-role="page">
 
-</div><!-- /page -->
+		<div data-role="header">
+			<div data-role="navbar">
+		   		<ul>
+			        <li><a href="#transaktionsliste">Transaktionsliste</a></li>
+			        <li><a href="#">Filialfinder</a></li>
+			        <li><a href="#">Ueberweisungen</a></li>
+			        <li><a href="#">Konteneinstellungen</a></li>
+		   		 </ul>
+			</div><!-- /navbar -->
+		</div><!-- /header -->
 
-<div id="page2" data-role="page">
+		<div data-role="content">
+			<h1><a href="#navbar"></a></h1>
 
-	<div data-role="header">
-		<h1>My Title</h1>
-	</div><!-- /header -->
 
-	<div data-role="content">	
-		<p>Seite2</p>	
-		
-		 <a href="home.html" data-role="button" data-icon="star" data-theme="d">Button</a> 
-		 
-		 
-		 <form>
-		   <label for="slider-0">Input slider:</label>
-		   <input type="range" name="slider" id="slider-0" value="25" min="0" max="100"  />
-		</form>
-		
-		.ui-dialog-contain {
-	width: 92.5%;
-	max-width: 500px;
-	margin: 10% auto 15px auto;
-	padding: 0;
-	position: relative;
-	top: -15px;
-}
-	</div><!-- /content -->
+			<div class="ui-grid-a">
+				<div class="ui-block-a" >
 
-</div><!-- /page -->
+					<div data-role="collapsible-set" data-mini="true">
+						<div data-role="collapsible" data-collapsed="true">
+							<h1>Heute</h1>
+								<p>Transaktion1</p>
+								<p>Transaktion2</p>													
+						</div>
+						<div data-role="collapsible" data-collapsed="true">
+							<h1>Gestern</h1>
+								<p>Transaktion1</p>
+								<p>Transaktion2</p>													
+						</div>
+					</div>
+					
+						<ul data-role="listview" data-inset="true" data-filter="true" data-theme="b">
+							<li><a href="#">Heute</a></li>
+							<li><a href="#">Gestern</a></li>
+							<li><a href="#">Vorgestern</a></li>
+						</ul>
+				
+				</div>
+				<div class="ui-block-b">
+					<ul data-role="listview" data-inset="true" data-theme="c">
+						<li><a href="#">Daten von Heute</a></li>
+						<li><a href="#">Daten von Gestern</a></li>
+						<li><a href="#">Daten von Vorgestern</a></li>
+					</ul>
+				</div>
+			</div><!-- /grid-a -->		 	
+		</div><!-- /content -->
+
+	</div><!-- /page -->
+
+	<div id="transaktionsliste" data-role="page">
+
+		<div data-role="header">
+			<h1>Alle Transaktionen</h1>
+		</div><!-- /header -->
+
+		<div data-role="content">	
+			<p>Transaktionen</p>	
+			
+			
+			
+			<a href="index.html" data-role="button" data-icon="star" data-theme="d">Zur Kontenübersicht</a> 
+		</div><!-- /content -->
+
+	</div><!-- /page -->
 
 
 
