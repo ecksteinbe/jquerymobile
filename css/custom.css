@@ -1,0 +1,11 @@
+.loginErrMsg{
+	color: 	#ff0000;
+}
+
+#filialen img, #transaktionen img {
+	float: left;
+	width: 64px;
+	height:64px;
+	margin-right:5px;
+	border: 1px solid;
+}

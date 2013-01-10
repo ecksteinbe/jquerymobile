@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>JQueryMobile</title> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <link rel="stylesheet" href="css/jquery.mobile-1.2.0.css" />
+        <link rel="stylesheet" href="css/custom.css" />
+    </head> 
+    <body>
+    
+
+	<div id="transaktionsliste" data-role="page">
+
+            <div data-role="header" data-theme="b">
+                <a href="home.html" data-role="button" data-icon="home" data-iconpos="notext" data-position="fixed" data-tap-toggle="false"></a>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#transaktionsliste" data-transition="slide">Transaktionsliste</a></li>
+                        <li><a href="filialfinder.html" data-transition="slide">Filialfinder</a></li>
+                        <li><a href="#ueberweisungen" data-transition="slide">Ueberweisungen</a></li>
+                        <li><a href="#konteneinstellungen" data-transition="slide">Konteneinstellungen</a></li>
+                    </ul>
+
+                </div><!-- /navbar -->
+                <h1> Transaktionsliste </h1>  
+            </div><!-- /header -->
+
+            <div data-role="content">
+            <script type="text/javascript">
+                  $('#transaktionsliste').on('pageshow',function(){
+                       $.ajax({
+                            url: 'https://pc42366.de.softlab.net:8181/JavaBackend/rest/secure/bankaccount/1/transactions', 
+                            dataType:'json',
+                            xhrFields: {
+                                withCredentials:true
+                            },
+                            crossDomain:true,
+                            success: function (data, textStatus, jqXHR){
+
+                                var respData = data.results;
+                                console.log(respData);
+
+                                console.log(respData[0].name);               
+
+                           },
+                            error: function(jqXHR, textStatus, errorThrown){
+                                console.log('Error: ');
+                                 $("div.log").ajaxError(function() {
+                                     $(this).text( "Triggered ajaxError handler." );
+                                    });
+                            }
+                        });  
+                  });
+            </script>
+            </div><!--content-->	 	
+    </div><!-- /page01 -->
+
+    <script src="js/jquery-1.8.2.js"></script>
+    <script src="js/jquery.mobile-1.2.0.js"></script>
+    <script src="js/filialfinder.js"></script>
+    <script src="js/login.js"></script>
+
+   </body>
+</html>

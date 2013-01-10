@@ -1,0 +1,14 @@
+# SEO URL Settings 
+RewriteEngine On 
+# If your opencart installation does not run on the main web folder make sure you folder it does run in ie. / becomes /shop/   
+
+RewriteBase /jquerymobile/
+RewriteRule ^JavaBackend/rest/secure/bankaccount/1/transactions$ requests/transaction.json [L]
+RewriteRule ^JavaBackend/rest/auth/login$ requests/loginSuccess.json [L]
+RewriteRule ^JavaBackend/rest/secure/places$ requests/location.json [L]
+RewriteRule ^JavaBackend/rest/secure/bankaccount/1/statistic$ requests/statistics.json [L]
+RewriteRule ^JavaBackend/rest/secure/bankaccount/1/categories$ requests/categories.json [L]
+RewriteRule ^JavaBackend/rest/auth/login-failed$ requests/loginFailure.json [L]
+RewriteRule ^JavaBackend/icons/categories/Freizeit.png$ images/Freizeit.png [L]
+RewriteRule ^JavaBackend/icons/categories/Lebensmittel.png$ images/Lebensmittel.png [L]
+RewriteRule ^JavaBackend/icons/categories/Kino.png$ images/Kino.png [L]

@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>JQueryMobile</title> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <link rel="stylesheet" href="css/jquery.mobile-1.2.0.css" />
+        <link rel="stylesheet" href="css/custom.css" />
+
+        <script src="js/jquery-1.8.2.js"></script>
+        <script src="js/jquery.mobile-1.2.0.js"></script>
+        <script src="js/login.js"></script>
+        <script src="js/functions.js"></script>
+
+    </head> 
+    <body>
+    
+
+	<div id="transaktionsInhalt" data-role="page" data-add-btn="true" data-back-btn-text="Zurück">
+
+            <div data-role="header" data-theme="b">
+            	
+                <a href="home.html" data-role="button" data-icon="home" data-iconpos="notext" data-position="fixed" data-tap-toggle="false"></a>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="transaktionsliste.html" data-transition="slide">Transaktionsliste</a></li>
+                        <li><a href="filialfinder.html" data-transition="slide">Filialfinder</a></li>
+                        <li><a href="#ueberweisungen" data-transition="slide">Ueberweisungen</a></li>
+                        <li><a href="#konteneinstellungen" data-transition="slide">Konteneinstellungen</a></li>
+                    </ul>
+
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <ul data-role="listview" id="transaktionen">
+               
+                </ul>
+            </div><!--content-->	
+             <script type="text/javascript">
+               
+
+
+                  $('#transaktionsliste').on('pageshow',function(){
+                       $.ajax({
+                            url: 'https://pc42366.de.softlab.net:8181/JavaBackend/rest/secure/bankaccount/1/transactions', 
+                            dataType:'json',
+                            xhrFields: {
+                                withCredentials:true
+                            },
+                            crossDomain:true,
+                            success: function (data, textStatus, jqXHR){
+                                var respData = data.bodyData;
+
+                                //Pruefen ob success true ist
+                                if(data.success){
+                                     transactionHandler(respData);
+                                }
+                                else{
+                                    transactionError(data.errorMsg);
+                                }
+
+                                console.log('!!!' + data);
+                                console.log(respData[0].name); 
+                                   
+                            },
+                            error: function(jqXHR, textStatus, errorThrown){
+                                console.log('Error: ');
+                                transactionError('Fehler beim Request: ' + textStatus);
+                                ajaxError(function() {
+                                     $(this).text( "Triggered ajaxError handler." );
+                                    });
+                            }
+
+                        });  
+                  });
+          
+            </script> 	
+    </div><!-- /transaktionsliste -->
+
+    
+
+   </body>
+</html>
