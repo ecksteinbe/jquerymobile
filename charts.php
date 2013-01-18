@@ -21,7 +21,6 @@
                   //Pruefen ob success true ist
                   if(data.success){
                     $.mobile.hidePageLoadingMsg();
-
                     // Callback that creates and populates a data table,
                     // instantiates the pie chart, passes in the data and
                     // draws it.

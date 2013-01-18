@@ -35,12 +35,37 @@ function filialError(data){
 	console.err('Fehler beim Abruf von \"data\" beim Aufruf der Filialen ' + data);
 }
 
+// Ausgabe der Kategorien 
 function categoryHandler(data){
    console.log(data);
     $('#categoryView').empty();
     $.each(data, function(i,item){
-        $('<div data-role="collapsible"  id="searchItems"><h3>'+item.name+'</h3><div>ID: '+item.id+'<br/><a href="includes/header.html" target="_blank">a</a><br/><a href="includes/footer.html" target="_blank">f</a></div></div>').appendTo('#categoryView');
+        $('<li data-role="list-divider" id="searchItems" data-link="farmanimals"><h3><span class="btn-text-name">'+item.name+'</span></h3><span class="ui-icon ui-icon-plus ui-icon-shadow listIcon">&nbsp;</span></li><li style="display:none">ID: '+item.name+'<br/></li><div data-role="collapsibleset"><div data-role="collapsible"><ul data-role="listview"><li>ID: '+item.id+'<br/></li></ul></div></div>').appendTo('#categoryView');
         }); 
+    
+    $(function(){
+    $('[data-role="list-divider"]').toggle(function(){
+        $('.'+$(this).attr('data-link')).addClass('show');
+        $(this).children().removeClass('ui-icon-plus').addClass('ui-icon-minus');        
+      },function(){
+        $('.'+$(this).attr('data-link')).removeClass('show');
+        $(this).children().removeClass('ui-icon-minus').addClass('ui-icon-plus');
+      });
+    });
+
+    $('#categoryViewListView').collapsibleset('refresh');
+    $('#categoryView').listview('refresh'); 
+}
+
+/*
+// Ausgabe der Kategorien 
+function categoryHandler(data){
+   console.log(data);
+    $('#categoryView').empty();
+    $.each(data, function(i,item){
+        $('<div data-role="collapsible" data-filter="true" id="searchItems"><h3><span class="btn-text-name">'+item.name+'</span></h3><li>ID: '+item.id+'<br/></li><li><a href="includes/header.html" target="_blank">a</a><br/></li><li><a href="includes/footer.html" target="_blank">f</a></li></div>').appendTo('#categoryView');
+        }); 
+    //$('#categoryViewListView').listview('refresh');
     $('#categoryView').collapsibleset('refresh'); 
 }
 
@@ -62,8 +87,10 @@ function liveSearch(data){
                     $('#categoryView').collapsibleset('refresh'); 
                     $("#categoryView").each(function(counterEntries)
                     {
-                    var item = $(this).text();
-                    //alert(item);
+                    //var item = $(this).text();
+                    var item = $('.btn-text-name').text();
+
+                    alert(item);
                     
                     // kurzform von if-else
                     (item.match(searchString) )? $(this).show() : $(this).hide();
@@ -79,6 +106,7 @@ function liveSearch(data){
             }); 
         });
 }
+*/
 
 function categoryError(data){
     console.err('Fehler beim Abruf von \"data\" beim Aufruf der Kategorien ' + data);

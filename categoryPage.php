@@ -3,10 +3,16 @@
     <div id="categoryPage" data-role="page">
         <?php include '/includes/header.html'; ?> 
     <div data-role="content">
-    	<div>Kategorie suchen:<br/></div>
-    	<div data-role="fieldcontain" id="categorySearch"><input type="search" id="searchBox"></div>
-    	<div>Alle Kategorien:<br/></div>
-    	<div data-role="collapsible-set" id="categoryView"></div>
+    	<!--Suchfeld --> 
+    	<!-- <form class="ui-listview-filter ui-bar-c" role="search">
+    		<label for="categorysearch"> Kategorien durchsuchen: </label>
+    		<input placeholder="Kategorien durchsuchen..." data-type="search" id="categorysearch" />
+    	</form> -->
+    	<!-- Liste mit Kategorien --> 
+    	<ul data-role="listview" data-filter="true" id="categoryView">
+    		<div data-role="collapsible-set" id="categoryViewListView" ></div> 
+    	</ul>
+    	<!-- Bearbeitung der Kategorien --> 
     	<div>Neue Kategorie hinzuf&uuml;gen:<br/></div>
     	<div data-role="fieldcontain" id="categoryAdd"><input type="text" /><input type="submit" value="Kategorie hinzuf&uuml;gen" data-inline="true"><input type="submit" value="Kategorie entfernen" data-inline="true"></div>
     </div><!--content-->
@@ -27,7 +33,7 @@
 	                if(data.success){
 	                    $.mobile.hidePageLoadingMsg();
 	                    categoryHandler(respData);
-	                    liveSearch(respData);
+	                    //liveSearch(respData);
 	                }
 	                else{
 	                    categoryError(data.errorMsg);

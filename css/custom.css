@@ -9,3 +9,13 @@
 	margin-right:5px;
 	border: 1px solid;
 }
+
+.hidden{
+    display:none;
+}
+.show{
+	display:block;
+}
+.listIcon{
+	float:left,
+}
