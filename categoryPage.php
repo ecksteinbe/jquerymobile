@@ -13,7 +13,7 @@
     		<div data-role="collapsible-set" id="categoryViewListView" ></div> 
     	</ul>
     	<!-- Bearbeitung der Kategorien --> 
-    	<div>Neue Kategorie hinzuf&uuml;gen:<br/></div>
+    	<div class="description">Neue Kategorie hinzuf&uuml;gen:</div>
     	<div data-role="fieldcontain" id="categoryAdd"><input type="text" /><input type="submit" value="Kategorie hinzuf&uuml;gen" data-inline="true"><input type="submit" value="Kategorie entfernen" data-inline="true"></div>
     </div><!--content-->
 	<script type="text/javascript">

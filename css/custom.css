@@ -15,7 +15,16 @@
 }
 .show{
 	display:block;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
+
 .listIcon{
-	float:left,
+	display:inline;
+	float:right;
+}
+
+.description{
+	margin-top: 15px;
+	margin-bottom: 10px;
 }

@@ -40,7 +40,7 @@ function categoryHandler(data){
    console.log(data);
     $('#categoryView').empty();
     $.each(data, function(i,item){
-        $('<li data-role="list-divider" id="searchItems" data-link="farmanimals"><h3><span class="btn-text-name">'+item.name+'</span></h3><span class="ui-icon ui-icon-plus ui-icon-shadow listIcon">&nbsp;</span></li><li style="display:none">ID: '+item.name+'<br/></li><div data-role="collapsibleset"><div data-role="collapsible"><ul data-role="listview"><li>ID: '+item.id+'<br/></li></ul></div></div>').appendTo('#categoryView');
+        $('<li data-role="list-divider" id="searchItems" data-link="farmanimals"><div style="display:inline;" class="ui-li-heading btn-text-name">'+item.name+'</div><div class="ui-icon ui-icon-plus ui-icon-shadow listIcon">&nbsp;</div></div></li><li style="display:none">ID: '+item.name+'<br/></li><div data-role="collapsibleset"><div data-role="collapsible"><ul data-role="listview" data-filter="true"><li class="farmanimals hidden">ID: '+item.id+'<br/></li></ul></div></div>').appendTo('#categoryView');
         }); 
     
     $(function(){
