@@ -57,56 +57,11 @@ function categoryHandler(data){
     $('#categoryView').listview('refresh'); 
 }
 
-/*
-// Ausgabe der Kategorien 
-function categoryHandler(data){
-   console.log(data);
-    $('#categoryView').empty();
-    $.each(data, function(i,item){
-        $('<div data-role="collapsible" data-filter="true" id="searchItems"><h3><span class="btn-text-name">'+item.name+'</span></h3><li>ID: '+item.id+'<br/></li><li><a href="includes/header.html" target="_blank">a</a><br/></li><li><a href="includes/footer.html" target="_blank">f</a></li></div>').appendTo('#categoryView');
-        }); 
-    //$('#categoryViewListView').listview('refresh');
-    $('#categoryView').collapsibleset('refresh'); 
-}
+$('#newCatButton').on('click', function() {
+    var catName = $('#newCategory').val();
+    alert($('#newCategory').val());
+});
 
-function liveSearch(data){
-    // ausführen wenn seite komplett geladen
-        $(document).ready(function()
-        {
-            // 1 - live-search darstellung
-            $("#categorySearch").bind("keyup", function()
-            {
-                //$("#categorySearch").show();
-                var searchString = $("#searchBox").val();
-                //alert(searchString);
-                            
-                // nur suchen, wenn minimum 1 buchstabe im eingabefeld ist
-                if (searchString.length > 0)
-                {
-                    //$("#searchItems").show();
-                    $('#categoryView').collapsibleset('refresh'); 
-                    $("#categoryView").each(function(counterEntries)
-                    {
-                    //var item = $(this).text();
-                    var item = $('.btn-text-name').text();
-
-                    alert(item);
-                    
-                    // kurzform von if-else
-                    (item.match(searchString) )? $(this).show() : $(this).hide();
-                    });
-                
-                //$("#searchItems").show();
-                $('#categoryView').collapsibleset('refresh'); 
-                }
-                else {
-                    $("#searchItems").show();
-                    $('#categoryView').collapsibleset('refresh'); 
-                }       
-            }); 
-        });
-}
-*/
 
 function categoryError(data){
     console.err('Fehler beim Abruf von \"data\" beim Aufruf der Kategorien ' + data);
