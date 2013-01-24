@@ -60,21 +60,21 @@ $('#newCatButton').on('click', function() {
     var catName = $('#newCategory').val();
     var jsonObject = {"version":1.0,"success":true,"bodyData":[
         {
-            id : 111,
+            did : 111,
             name : catName,
             iconUrl : 'http://jquerymobile.com'
-        },
-        {
-            id : 164,
-            name : 'Freizeit',
-            iconURL : 'https://pc42366.de.softlab.net:8181/JavaBackend/icons/categories/Freizeit.png' 
-        },
-        {
-            id : 166,
-            name : 'Lebensmittel',
-            iconURL : 'https://pc42366.de.softlab.net:8181/JavaBackend/icons/categories/Lebensmittel.png'
-        }
-        ]
+        }//,
+//        {
+//            id : 164,
+//            name : 'Freizeit',
+//            iconURL : 'https://pc42366.de.softlab.net:8181/JavaBackend/icons/categories/Freizeit.png'
+//        },
+//        {
+//            id : 166,
+//            name : 'Lebensmittel',
+//            iconURL : 'https://pc42366.de.softlab.net:8181/JavaBackend/icons/categories/Lebensmittel.png'
+//        }
+    ]
     };
 
     alert($('#newCategory').val());
@@ -89,7 +89,7 @@ $('#newCatButton').on('click', function() {
 });
 
 function categoryError(data){
-    console.err('Fehler beim Abruf von \"data\" beim Aufruf der Kategorien ' + data);
+    console.error('Fehler beim Abruf von \"data\" beim Aufruf der Kategorien ' + data);
 }
 
 function drawChart(data) {
