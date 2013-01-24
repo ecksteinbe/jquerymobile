@@ -1,7 +1,7 @@
 <?php include '/includes/html_head.html'; ?>
     
     <div id="categoryPage" data-role="page">
-        <?php include '/includes/header.html'; ?> 
+        <?php include '/includes/header.html'; ?>
     <div data-role="content">
     	<!--Suchfeld --> 
     	<!-- <form class="ui-listview-filter ui-bar-c" role="search">

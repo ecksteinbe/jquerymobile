@@ -52,16 +52,41 @@ function categoryHandler(data){
         $(this).children().removeClass('ui-icon-minus').addClass('ui-icon-plus');
       });
     });
-
     $('#categoryViewListView').collapsibleset('refresh');
     $('#categoryView').listview('refresh'); 
 }
 
 $('#newCatButton').on('click', function() {
     var catName = $('#newCategory').val();
-    alert($('#newCategory').val());
-});
+    var jsonObject = {"version":1.0,"success":true,"bodyData":[
+        {
+            id : 111,
+            name : catName,
+            iconUrl : 'http://jquerymobile.com'
+        },
+        {
+            id : 164,
+            name : 'Freizeit',
+            iconURL : 'https://pc42366.de.softlab.net:8181/JavaBackend/icons/categories/Freizeit.png' 
+        },
+        {
+            id : 166,
+            name : 'Lebensmittel',
+            iconURL : 'https://pc42366.de.softlab.net:8181/JavaBackend/icons/categories/Lebensmittel.png'
+        }
+        ]
+    };
 
+    alert($('#newCategory').val());
+    $.ajax({
+        type : 'POST',
+        url : rootUrl+'/php/writeToJson.php',
+        dataType : 'json',
+        data : {
+            json : jsonObject
+        }
+    });
+});
 
 function categoryError(data){
     console.err('Fehler beim Abruf von \"data\" beim Aufruf der Kategorien ' + data);
