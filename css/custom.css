@@ -1,31 +1,32 @@
-.loginErrMsg{
-	color: 	#ff0000;
+.loginErrMsg {
+    color: #ff0000;
 }
 
 #filialen img, #transaktionen img {
-	float: left;
-	width: 64px;
-	height:64px;
-	margin-right:5px;
-	border: 1px solid;
+    float: left;
+    width: 64px;
+    height: 64px;
+    margin-right: 5px;
+    border: 1px solid;
 }
 
-.hidden{
-    display:none;
-}
-.show{
-	display:block;
-	margin-top: 10px;
-	margin-bottom: 10px;
+.hidden {
+    display: none;
 }
 
-.listIcon{
-	display:inline;
-	float:right;
+.show {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.description{
-	margin-top: 15px;
-	margin-bottom: 10px;
-	display:block;
+.listIcon {
+    display: inline;
+    float: right;
+}
+
+.description {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: block;
 }
