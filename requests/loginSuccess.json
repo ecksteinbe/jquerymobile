@@ -1,1 +1,8 @@
-{"version":1.0,"success":true,"bodyData":{"id":1,"userName":"benjamin","email":"benjamin.eckstein@nttdata.com","countLoginErrors":0,"lastLogin":"2012-08-29","allowedBankAccountId":1}}
+{"version": 1.0, "success": true, "bodyData": {
+    "id": 1,
+    "userName": "benjamin",
+    "email": "benjamin.eckstein@nttdata.com",
+    "countLoginErrors": 0,
+    "lastLogin": "2012-08-29",
+    "allowedBankAccountId": 1
+}}

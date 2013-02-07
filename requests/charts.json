@@ -1,7 +1,16 @@
 {
-"charts": [
-{ "Aldi Süd":"234" , "category":"Discounter" }, 
-{ "Edeka":"19" , "category":"Discounter" }, 
-{ "Media Markt":"695" , "category":"Freizeit" }
-]
+    "charts": [
+        {
+            "Aldi Süd": "234",
+            "category": "Discounter"
+        },
+        {
+            "Edeka": "19",
+            "category": "Discounter"
+        },
+        {
+            "Media Markt": "695",
+            "category": "Freizeit"
+        }
+    ]
 }

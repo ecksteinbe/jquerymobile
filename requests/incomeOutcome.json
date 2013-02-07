@@ -1,1 +1,15 @@
-{"version":1.0,"success":true,"bodyData":[{"name":"12/2012","value1":0.0,"value2":56.989998,"value3":-56.989998,"value4":0.0,"value5":0.0,"value6":0.0,"value7":0.0,"value8":0.0,"value9":0.0,"value10":0.0}]}
+{"version": 1.0, "success": true, "bodyData": [
+    {
+        "name": "12/2012",
+        "value1": 0.0,
+        "value2": 56.989998,
+        "value3": -56.989998,
+        "value4": 0.0,
+        "value5": 0.0,
+        "value6": 0.0,
+        "value7": 0.0,
+        "value8": 0.0,
+        "value9": 0.0,
+        "value10": 0.0
+    }
+]}

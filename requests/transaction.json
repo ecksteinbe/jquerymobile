@@ -1,1 +1,47 @@
-{"version":1.0,"success":true,"bodyData":[{"id":"519","billingDate":"07.12.2012","valueDate":"07.12.2012","amount":-12.89,"revenueType":null,"name":"Stefan Wörner","account":"65464","bankCode":"364","purpose":"Essen gehen!","category":"Freizeit","categoryIcon":"https://pc42366.de.softlab.net:8181/JavaBackend/icons/categories/Freizeit.png","categoryId":1,"billingDateMillis":1354834800000},{"id":"518","billingDate":"07.12.2012","valueDate":"07.12.2012","amount":-32.12,"revenueType":null,"name":"Jenny Mathauser","account":"987564","bankCode":"987654","purpose":"Geld Transfer","category":"Sparen","categoryIcon":"https://pc42366.de.softlab.net:8181/JavaBackend/icons/categories/Sparen.png","categoryId":6,"billingDateMillis":1354834800000},{"id":"517","billingDate":"07.12.2012","valueDate":"07.12.2012","amount":-11.98,"revenueType":null,"name":"Franz Mathauser","account":"536896","bankCode":"71152570","purpose":"Kino","category":"Kino","categoryIcon":"https://pc42366.de.softlab.net:8181/JavaBackend/icons/categories/Kino.png","categoryId":136,"billingDateMillis":1354834800000}]}
+{"version": 1.0, "success": true, "bodyData": [
+    {
+        "id": "519",
+        "billingDate": "07.12.2012",
+        "valueDate": "07.12.2012",
+        "amount": -12.89,
+        "revenueType": null,
+        "name": "Stefan Wörner",
+        "account": "65464",
+        "bankCode": "364",
+        "purpose": "Essen gehen!",
+        "category": "Freizeit",
+        "categoryIcon": "https://pc42366.de.softlab.net:8181/JavaBackend/icons/categories/Freizeit.png",
+        "categoryId": 1,
+        "billingDateMillis": 1354834800000
+    },
+    {
+        "id": "518",
+        "billingDate": "07.12.2012",
+        "valueDate": "07.12.2012",
+        "amount": -32.12,
+        "revenueType": null,
+        "name": "Jenny Mathauser",
+        "account": "987564",
+        "bankCode": "987654",
+        "purpose": "Geld Transfer",
+        "category": "Sparen",
+        "categoryIcon": "https://pc42366.de.softlab.net:8181/JavaBackend/icons/categories/Sparen.png",
+        "categoryId": 6,
+        "billingDateMillis": 1354834800000
+    },
+    {
+        "id": "517",
+        "billingDate": "07.12.2012",
+        "valueDate": "07.12.2012",
+        "amount": -11.98,
+        "revenueType": null,
+        "name": "Franz Mathauser",
+        "account": "536896",
+        "bankCode": "71152570",
+        "purpose": "Kino",
+        "category": "Kino",
+        "categoryIcon": "https://pc42366.de.softlab.net:8181/JavaBackend/icons/categories/Kino.png",
+        "categoryId": 136,
+        "billingDateMillis": 1354834800000
+    }
+]}

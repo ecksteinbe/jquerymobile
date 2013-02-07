@@ -1,1 +1,17 @@
-{"version":1.0,"success":true,"bodyData":[{"id":164,"name":"Freizeit","iconUrl":"https://pc42366.de.softlab.net:8181/JavaBackend/icons/categories/Freizeit.png"},{"id":166,"name":"Lebensmittel","iconUrl":"https://pc42366.de.softlab.net:8181/JavaBackend/icons/categories/Lebensmittel.png"}]}
+{"version": 1.0, "success": true, "bodyData": [
+    {
+        "id": 164,
+        "name": "Freizeit",
+        "iconUrl": "https://pc42366.de.softlab.net:8181/JavaBackend/icons/categories/Freizeit.png"
+    },
+    {
+        "id": 166,
+        "name": "Lebensmittel",
+        "iconUrl": "https://pc42366.de.softlab.net:8181/JavaBackend/icons/categories/Lebensmittel.png"
+    },
+    {
+        "id": 111,
+        "name": "asdfas",
+        "iconUrl": "http://jquerymobile.com"
+    }
+]}
