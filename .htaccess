@@ -12,3 +12,4 @@ RewriteRule ^JavaBackend/rest/auth/login-failed$ requests/loginFailure.json [L]
 RewriteRule ^JavaBackend/icons/categories/Freizeit.png$ images/Freizeit.png [L]
 RewriteRule ^JavaBackend/icons/categories/Lebensmittel.png$ images/Lebensmittel.png [L]
 RewriteRule ^JavaBackend/icons/categories/Kino.png$ images/Kino.png [L]
+
