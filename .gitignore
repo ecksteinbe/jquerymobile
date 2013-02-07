@@ -10,3 +10,6 @@ nbproject/
 #folders
 _trash/
 php/
+
+#files
+*.*_old
