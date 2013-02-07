@@ -1,2 +1,9 @@
 /nbproject
 nbproject
+
+/webstorm
+.idea
+
+/eclipse
+.project
+
