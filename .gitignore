@@ -1,9 +1,12 @@
-/nbproject
-nbproject
+#nbproject
+nbproject/
 
-/webstorm
-.idea
+#webstorm
+.idea/
 
-/eclipse
+#eclipse
 .project
 
+#folders
+_trash/
+php/
