@@ -35,12 +35,57 @@ function filialError ( data ) {
     console.err ( 'Fehler beim Abruf von \"data\" beim Aufruf der Filialen ' + data );
 }
 
+
+function doLoadCategories(){
+    $.ajax ( {
+        url: rootUrl + '/JavaBackend/rest/secure/bankaccount/'+sessionStorage.getItem('allowedBankAccountId')+'/categories',
+        dataType: 'json',
+        xhrFields: {
+            withCredentials: true
+        },
+        crossDomain: true,
+        success: function ( data, textStatus, jqXHR ) {
+            var respData = data.bodyData;
+            //Pruefen ob success true ist
+            if ( data.success ) {
+                $.mobile.hidePageLoadingMsg ();
+                categoryHandler ( respData );
+            }
+            else {
+                categoryError ( data.errorMsg );
+            }
+            //console.log ( 'Beispieldaten aus bodydata: ' + respData[1].name );
+        },
+        error: function ( jqXHR, textStatus, errorThrown ) {
+            console.log ( 'Error: ' );
+            categoryError ( 'Fehler beim Request: ' + textStatus );
+            ajaxError ( function () {
+                $ ( this ).text ( "Triggered ajaxError handler." );
+            } );
+        }
+    } );
+}
 // Ausgabe der Kategorien 
 function categoryHandler ( data ) {
     console.log ( data );
     $ ( '#categoryView' ).empty ();
     $.each ( data, function ( i, item ) {
-        $ ( '<li data-role="list-divider" id="searchItems" data-link="farmanimals"><div style="display:inline;" class="ui-li-heading btn-text-name">' + item.name + '</div><div class="ui-icon ui-icon-plus ui-icon-shadow listIcon">&nbsp;</div></div></li><li style="display:none">ID: ' + item.name + '<br/></li><div data-role="collapsibleset"><div data-role="collapsible"><ul data-role="listview" data-filter="true"><li class="farmanimals hidden">ID: ' + item.id + '<br/></li></ul></div></div>' ).appendTo ( '#categoryView' );
+        $ ( '<li data-role="list-divider" id="searchItems" data-link="catId-'+item.id+'"> \
+                <div style="display:inline;" class="ui-li-heading btn-text-name">' + item.name + '</div> \
+                <div class="ui-icon ui-icon-plus ui-icon-shadow listIcon">&nbsp;</div> \
+                </div> \
+            </li> \
+            <!--<li style="display:none">ID: ' + item.name + '<br/></li>--> \
+            <div data-role="collapsibleset"> \
+                <div data-role="collapsible"> \
+                    <ul data-role="listview" data-filter="true"> \
+                        <li class="catId-'+item.id+' hidden"> \
+                            <img src="'+item.iconUrl+'" style="float:left; width:40px;"/> \
+                            ID: ' + item.id + '<br/> \
+                        </li> \
+                    </ul> \
+                </div> \
+            </div>' ).appendTo ( '#categoryView' );
     } );
 
     $ ( function () {
@@ -52,31 +97,31 @@ function categoryHandler ( data ) {
             $ ( this ).children ().removeClass ( 'ui-icon-minus' ).addClass ( 'ui-icon-plus' );
         } );
     } );
-    $ ( '#categoryViewListView' ).collapsibleset ( 'refresh' );
+    //$ ( '#categoryViewListView' ).collapsibleset ( 'refresh' );
     $ ( '#categoryView' ).listview ( 'refresh' );
 }
 
 $ ( '#newCatButton' ).on ( 'click', function () {
     var catName = $ ( '#newCategory' ).val ();
-    var jsonObject = {"version": 1.0, "success": true, "bodyData": [
+    var jsonObject =
         {
-            id: 111,
-            name: catName,
-            iconUrl: 'http://jquerymobile.com'
-        }
-    ]
-    };
+            name: catName    
+        };
     alert ( $ ( '#newCategory' ).val () );
     $.ajax ( {
         type: 'POST',
-        url: rootUrl + '/php/writeToJson.php',
+        url: rootUrl + '/JavaBackend/rest/secure/bankaccount/'+sessionStorage.getItem('allowedBankAccountId')+'/categories',
         dataType: 'json',
-        data: {
-            json: jsonObject
+        contentType:'application/json',
+        xhrFields: {
+            withCredentials: true
         },
+        crossDomain: true,
+        data: JSON.stringify(jsonObject),
         success: function ( data, textStatus, jqXHR ) {
             var respData = data.bodyData;
             console.log ( 'Kategorie erfolgreich hinzugefügt: ' + respData.name );
+            doLoadCategories();
         },
         error: function ( jqXHR, textStatus, errorThrown ) {
             console.log ( 'Ajax-Request fehlgeschlagen: ' + jqXHR + errorThrown );
