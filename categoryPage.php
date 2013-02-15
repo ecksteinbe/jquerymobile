@@ -37,33 +37,7 @@
                 $ ( '#categoryPage' ).on ( 'pageshow', function () {
                     console.log ( 'CategoryPage wurde geladen.' );
                     $.mobile.showPageLoadingMsg ();
-                    $.ajax ( {
-                        url: rootUrl + '/JavaBackend/rest/secure/bankaccount/'+sessionStorage.getItem('allowedBankAccountId')+'/categories',
-                        dataType: 'json',
-                        xhrFields: {
-                            withCredentials: true
-                        },
-                        crossDomain: true,
-                        success: function ( data, textStatus, jqXHR ) {
-                            var respData = data.bodyData;
-                            //Pruefen ob success true ist
-                            if ( data.success ) {
-                                $.mobile.hidePageLoadingMsg ();
-                                categoryHandler ( respData );
-                            }
-                            else {
-                                categoryError ( data.errorMsg );
-                            }
-                            //console.log ( 'Beispieldaten aus bodydata: ' + respData[1].name );
-                        },
-                        error: function ( jqXHR, textStatus, errorThrown ) {
-                            console.log ( 'Error: ' );
-                            categoryError ( 'Fehler beim Request: ' + textStatus );
-                            ajaxError ( function () {
-                                $ ( this ).text ( "Triggered ajaxError handler." );
-                            } );
-                        }
-                    } );
+                    doLoadCategories();
                 } );
 
             </script>
